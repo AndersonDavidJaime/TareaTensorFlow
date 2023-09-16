@@ -1,9 +1,7 @@
 package com.example.aplicaciontensorflow;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -107,7 +105,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-    //hasta aca
     private void ClasificadorDeImagenes(Bitmap image) {
         try {
             ByteBuffer buffer = ByteBuffer.allocateDirect(4 * imageSize * imageSize * 3).order(ByteOrder.nativeOrder());
@@ -121,7 +118,8 @@ public class MainActivity extends AppCompatActivity {
             }
             buffer.rewind();
             TensorBuffer inputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 224, 224, 3}, DataType.FLOAT32);
-            inputFeature0.loadBuffer(buffer);            TensorBuffer outputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 4}, DataType.FLOAT32);
+            inputFeature0.loadBuffer(buffer);
+            TensorBuffer outputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 4}, DataType.FLOAT32);
             interpreter.run(inputFeature0.getBuffer(), outputFeature0.getBuffer());
             float[] confidences = outputFeature0.getFloatArray();
             int maximaPosicion = 0;
@@ -139,16 +137,11 @@ public class MainActivity extends AppCompatActivity {
                 resultsText.append(classes[i]).append(": ").append(String.format("%.1f%%", confidences[i] * 100)).append("\n");
             }
             txtResults.setText(resultsText.toString());
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        } catch (Exception e) {throw new RuntimeException(e);}
     }
-
-
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
         for (int i = 0; i < permissions.length; i++) {
             if (permissions[i].equals(android.Manifest.permission.CAMERA)) {
                 btngaleria.setEnabled(grantResults[i] == PackageManager.PERMISSION_GRANTED);
