@@ -2,8 +2,9 @@
 
                                 "TENSORFLOW CON IMÁGENES DE LOS DUEÑOS DEL MUNDO"
 
-
+BILL GATES:
 ![bill](https://github.com/AndersonDavidJaime/TareaTensorFlow/assets/124792573/42ca6610-2fc0-44c9-97c4-fa128bc350b6)
+
 
 ![jef](https://github.com/AndersonDavidJaime/TareaTensorFlow/assets/124792573/bf29a69c-f8bd-4077-b13d-3f027bb6c7c9)
 
