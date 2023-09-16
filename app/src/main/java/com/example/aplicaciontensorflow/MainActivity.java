@@ -27,7 +27,6 @@ import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 import java.util.List;
-
 public class MainActivity extends AppCompatActivity {
     public static int REQUEST_GALLERY = 222;
     public static int REQUEST_CAMERA = 111;
