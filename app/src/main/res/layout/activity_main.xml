@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/txtTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="#FFEB3B"
+        android:text="TensorFlow"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:drawableTintMode="add"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="10dp" />
+    <Button
+        android:id="@+id/btGallery"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_margin="5dp"
+        android:text="Abrir Galería"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtresults" />
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtEsteEs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitulo" />
+
+    <TextView
+        android:id="@+id/txtParecido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical"
+        android:text="Este es"
+        android:textColor="#FF5722"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/txtresults"
+       app:layout_constraintTop_toBottomOf="@id/txtEsteEs" />
+
+    <TextView
+        android:id="@+id/txtEsteEs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:scrollbars="vertical"
+        android:inputType="textMultiLine"
+        android:gravity="center"
+        android:text="La persona de la foto es:"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/txtParecido"
+        app:layout_constraintTop_toBottomOf="@id/image_view"/>
+    <TextView
+        android:id="@+id/txtresults"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:scrollbars="vertical"
+        android:inputType="textMultiLine"
+        android:text="Resultados:"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/btGallery"
+        app:layout_constraintTop_toBottomOf="@id/txtParecido"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
